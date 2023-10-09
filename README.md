@@ -2,5 +2,5 @@
 
 <h2 align="left">Description</h2>
 <div align="left">
-My Money App is a handy application for keeping track of your income and expenses.The user can sort expenses according to their categories and in one click see all the expenses for the chosen period of time.
+My Money App is a handy application for keeping track of your finances.The budgeting app sorts expenses according to the categories so you can see all you expenses for the chosen period of time not only in numbers but also in clear visual graphs just in one click. Become the boss of your own budget:)
 </div>
