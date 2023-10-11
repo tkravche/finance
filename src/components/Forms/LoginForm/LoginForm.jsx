@@ -1,6 +1,6 @@
 import React from 'react';
-import { toast } from 'react-toastify';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+// import { toast } from 'react-toastify';
+import { Formik, Form, Field } from 'formik';
 
 import { RegistrationSchema } from '../ValidationSchemas';
 
