@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/finance/static/css/main.e6c13ad2.css",
-    "main.js": "/finance/static/js/main.24491243.js",
+    "main.css": "/finance/static/css/main.74d75d72.css",
+    "main.js": "/finance/static/js/main.6c138b3d.js",
     "static/js/787.e597190e.chunk.js": "/finance/static/js/787.e597190e.chunk.js",
+    "static/media/Poppins-Regular.ttf": "/finance/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-SemiBold.ttf": "/finance/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
+    "static/media/Poppins-Bold.ttf": "/finance/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/bg-register-desktop.jpg": "/finance/static/media/bg-register-desktop.163d8e534e5e7df81606.jpg",
+    "static/media/bg-login-web.jpg": "/finance/static/media/bg-login-web.20b913d3ca3801ec00e3.jpg",
+    "static/media/logo.svg": "/finance/static/media/logo.143a8f6f5dcf526cdac1808c9d0577d6.svg",
     "index.html": "/finance/index.html",
-    "main.e6c13ad2.css.map": "/finance/static/css/main.e6c13ad2.css.map",
-    "main.24491243.js.map": "/finance/static/js/main.24491243.js.map",
+    "main.74d75d72.css.map": "/finance/static/css/main.74d75d72.css.map",
+    "main.6c138b3d.js.map": "/finance/static/js/main.6c138b3d.js.map",
     "787.e597190e.chunk.js.map": "/finance/static/js/787.e597190e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.24491243.js"
+    "static/css/main.74d75d72.css",
+    "static/js/main.6c138b3d.js"
   ]
 }
