@@ -1,19 +1,30 @@
 import React from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { Formik, Form, Field } from 'formik';
 
 import { RegistrationSchema } from '../ValidationSchemas';
 import { Logo } from '../../Logo/Logo';
+import { registerThunk } from '../../../redux/auth/authOperations';
 
 const RegisterForm = () => {
-  // const dispatch = useDispatch();
-  const handleSubmit = formData => {
-    console.log(formData);
+  const dispatch = useDispatch();
+  const handleSubmit = (values, { resetForm }) => {
+    const { username, email, password } = values;
+    dispatch(registerThunk({ username, email, password }))
+      .then(data => {
+        resetForm();
+        toast.success(
+          `Hi! ${data.user.username}, thanks for signing up. Welcome to Money Guard!`
+        );
+      })
+      .catch(error => {
+        toast.error(`${error}`);
+      });
   };
   return (
-    <div class="py-10  px-16 rounded-lg w-[533px] h-[613px] absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] bg-form-cl shadow-form-shadow backdrop-blur-2xl">
+    <div class="py-10  px-16 rounded-lg w-[533px] h-[613px] absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] bg-form-bg bg-cover bg-center bg-no-repeat shadow-form-shadow backdrop-blur-2xl">
       <Logo />
       <Formik
         initialValues={{
@@ -43,7 +54,12 @@ const RegisterForm = () => {
                 />
               </svg>
 
-              <Field type="text" name="username" placeholder="Name"></Field>
+              <Field
+                type="text"
+                name="username"
+                placeholder="Name"
+                autoComplete="off"
+              ></Field>
             </div>
             <div class="flex">
               <svg
@@ -60,7 +76,12 @@ const RegisterForm = () => {
                   d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                 />
               </svg>
-              <Field type="email" name="email" placeholder="Email"></Field>
+              <Field
+                type="email"
+                name="email"
+                placeholder="Email"
+                autoComplete="off"
+              ></Field>
             </div>
             <div class="flex">
               <svg
@@ -81,6 +102,7 @@ const RegisterForm = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
+                autoComplete="off"
               ></Field>
             </div>
             <div class="flex">
@@ -102,6 +124,7 @@ const RegisterForm = () => {
                 type="password"
                 name="password_confirm"
                 placeholder="Confirm Password"
+                autoComplete="off"
               ></Field>
             </div>
             <button type="submit">Register</button>

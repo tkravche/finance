@@ -51,9 +51,8 @@ module.exports = {
 
       // 'header-shadow': '0px 4px 40px 0px rgba(0, 0, 0, 0.25),
       //     0px -3px 2px 0px rgba(0, 0, 0, 0.1) inset',
-      "form-shadow": "0px 4px 60px 0px rgba(0, 0, 0, 0.25)",
+      
       "btn-shadow": "1px 9px 15px 0px rgba(0, 0, 0, 0.2)",
-
       "backdrop-filter": "blur(50px)",
     },
     extend: {
@@ -66,6 +65,10 @@ module.exports = {
       backgroundImage: {
         "register-bg": "url('/src/images/register/bg-register-desktop.jpg')",
         "login-bg": "url('/src/images/login/bg-login-web.jpg')",
+        "form-bg": "url('/src/images/form/DesktopBg.jpg')",
+      },
+      boxShadow:{
+        "form-shadow": "0px 4px 60px 0px rgba(0, 0, 0, 0.25)",
       },
     },
   },
