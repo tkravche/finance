@@ -5,6 +5,7 @@ import {
   loginUser,
   registerUser,
 } from '../../services/authAPI';
+import { setToken } from '../../services/walletURL';
 
 export const registerThunk = createAsyncThunk(
   '@@auth/registerUser',
@@ -41,11 +42,13 @@ export const logoutThunk = createAsyncThunk(
 
 export const currentUserThunk = createAsyncThunk(
   '@@auth/currentUser',
-  async (_, { rejectWithValue }) => {
+  async (_, thunkAPI) => {
+    const token = thunkAPI.getState().auth.token;
+    setToken(token);
     try {
       return await currentUser();
     } catch (error) {
-      return rejectWithValue(error.response.status);
+      return thunkAPI.rejectWithValue(error.response.status);
     }
   }
 );

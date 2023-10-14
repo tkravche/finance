@@ -4,23 +4,25 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Formik, Form, Field } from 'formik';
 
-import { RegistrationSchema } from '../ValidationSchemas';
+import { LoginSchema } from '../ValidationSchemas';
 import { Logo } from '../../Logo/Logo';
 import { loginThunk } from '../../../redux/auth/authOperations';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
   const handleSubmit = (values, { resetForm }) => {
-    const { username, email, password } = values;
-    dispatch(loginThunk({ username, email, password }))
+    const { email, password } = values;
+    dispatch(loginThunk({ email, password }))
       .then(data => {
         resetForm();
         toast.success(
-          `Hi! ${data.user.username}, thanks for signing up. Welcome to Money Guard!`
+          `Well done, ${data.user.username}! You have signed in successfully.`
         );
       })
       .catch(error => {
-        toast.error(`${error}`);
+        toast.error(
+          'You entered incorrect data, please check your password or email!'
+        );
       });
   };
   return (
@@ -28,11 +30,10 @@ const LoginForm = () => {
       <Logo />
       <Formik
         initialValues={{
-          username: '',
           email: '',
           password: '',
         }}
-        validationSchema={RegistrationSchema}
+        validationSchema={LoginSchema}
         onSubmit={handleSubmit}
       >
         {({ errors, touched, handleChange, setFieldTouched }) => (
@@ -85,7 +86,7 @@ const LoginForm = () => {
           </Form>
         )}
       </Formik>
-      <Link to="/register">Rgister</Link>
+      <Link to="/register">Register</Link>
     </div>
   );
 };

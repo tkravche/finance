@@ -8,9 +8,9 @@ import {
 
 const initialState = {
   isLoading: false,
-  isLogedIn: false,
+  isLoggedIn: false,
   error: null,
-  userData: null,
+  userData: { username: '' },
   token: null,
 };
 
@@ -24,7 +24,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.userData = payload.user;
         state.token = payload.token;
-        state.isLogedIn = true;
+        state.isLoggedIn = true;
       })
       //--------------------------- Log in -----------------------------
 
@@ -32,7 +32,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.userData = payload.user;
         state.token = payload.token;
-        state.isLogedIn = true;
+        state.isLoggedIn = true;
       })
       //--------------------------- Log out -----------------------------
 
@@ -40,15 +40,14 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.userData = null;
         state.token = null;
-        state.isLogedIn = false;
+        state.isLoggedIn = false;
       })
       //--------------------------- current User -----------------------------
 
       .addCase(currentUserThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.userData = payload.user;
-        state.token = payload.token;
-        state.isLogedIn = true;
+        state.userData.username = payload.username;
+        state.isLoggedIn = true;
       })
       .addMatcher(
         action => action.type.endsWith('/pending'),

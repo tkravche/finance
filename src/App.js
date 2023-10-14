@@ -5,13 +5,27 @@ import RegisterPage from './pages/RegisterPage/RegisterPage.jsx';
 import LoginPage from './pages/LoginPage/LoginPage.jsx';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage.jsx';
 import PublicRoute from './routes/PublicRoute.jsx';
-import Dashboard from './pages/Dashboard/Dashboard.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
-import HomePage from './pages/HomePage.jsx';
+import HomePage from './pages/HomePage/HomePage.jsx';
 import StatisticsPage from './pages/StatisticsPage/StatisticsPage.jsx';
-import Currency from './pages/Currency/Currency';
+import SharedLayout from './components/SharedLayout/SharedLayout.jsx';
+import CurrencyPage from './pages/CurrencyPage/CurrencyPage';
+import { useEffect } from 'react';
+import { currentUserThunk } from './redux/auth/authOperations';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsLogin, selectToken } from './redux/selectors';
 
 function App() {
+  const dispatch = useDispatch();
+  const isLogin = useSelector(selectIsLogin);
+  const token = useSelector(selectToken);
+
+  useEffect(() => {
+    if (!isLogin && token) {
+      dispatch(currentUserThunk());
+    }
+  }, [dispatch, isLogin, token]);
+
   return (
     <Routes>
       <Route
@@ -30,8 +44,22 @@ function App() {
           </PublicRoute>
         }
       />
-
-      <Route element={<Dashboard />}>
+      <Route
+        path="/"
+        element={
+          <PrivateRoute>
+            <SharedLayout />
+          </PrivateRoute>
+        }
+      >
+        <Route
+          index
+          element={
+            <PrivateRoute>
+              <Navigate to="/home" />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/home"
           element={
@@ -45,6 +73,14 @@ function App() {
           element={
             <PrivateRoute>
               <StatisticsPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/currency"
+          element={
+            <PrivateRoute>
+              <CurrencyPage />
             </PrivateRoute>
           }
         />
