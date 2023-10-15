@@ -9,6 +9,7 @@ import { selectUserName } from '../../redux/selectors';
 import { Logo } from '../Logo/Logo';
 import Modal from '../Modal/Modal';
 import Button from '../Buttons/Button';
+import { Container } from '../Container/Container';
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,20 +27,24 @@ const Header = () => {
   };
   return (
     <header>
-      <div class="flex justify-between bg-[#2e225f]">
-        <Link to="/">
-          <Logo />
-        </Link>
-        <div class="">
-          <span>{currentUserName}</span>
-          <button onClick={openModal}>Exit</button>
-          <Modal isOpen={isModalOpen} onClose={closeModal}>
-            <p>Are you sure you want to log out?</p>
-            <Button type="button" bgColor={true} onClick={handleLogout}>
-              Log out
-            </Button>
-          </Modal>
-        </div>
+      <div class="bg-[#2e225f]">
+        <Container>
+          <div class=" flex justify-between">
+            <Link to="/">
+              <Logo />
+            </Link>
+            <div class="">
+              <span>{currentUserName}</span>
+              <button onClick={openModal}>Exit</button>
+              <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <p>Are you sure you want to log out?</p>
+                <Button type="button" bgColor={true} onClick={handleLogout}>
+                  Log out
+                </Button>
+              </Modal>
+            </div>
+          </div>
+        </Container>
       </div>
     </header>
   );

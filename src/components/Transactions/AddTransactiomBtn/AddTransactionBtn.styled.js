@@ -19,7 +19,7 @@ export const BtnStyled = styled.button`
   justify-content: center;
   position: absolute;
   bottom: 40px;
-  right: 40px;
+  right: 150px;
   transition: 250ms;
 
   &:hover,

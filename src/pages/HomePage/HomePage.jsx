@@ -3,6 +3,7 @@ import AddTransactionBtn from '../../components/Transactions/AddTransactiomBtn/A
 import Modal from '../../components/Modal/Modal';
 import AddTransactionPopUp from '../../components/Transactions/AddTransactionPopUp/AddTransactionPopUp';
 import { StyledSection } from './HomePage.styled';
+import TransactionTableHead from '../../components/Transactions/TransactionTableHead/TransactionTableHead';
 
 const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,6 +13,7 @@ const HomePage = () => {
   };
   return (
     <StyledSection>
+      <TransactionTableHead />
       <AddTransactionBtn onClick={openModal} />
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <AddTransactionPopUp onClose={closeModal} />
