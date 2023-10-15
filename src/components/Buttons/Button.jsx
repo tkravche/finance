@@ -1,0 +1,27 @@
+import React from 'react';
+import { StyledButton } from './Button.styled';
+// import { StyledButton } from './Button.styled';
+
+function Button({
+  children,
+  ariaLabel = 'button for click',
+  bgColor,
+  textCl,
+  marginB,
+  type = 'button',
+  onClick,
+}) {
+  return (
+    <StyledButton
+      type={type}
+      onClick={onClick}
+      buttonBg={bgColor}
+      buttonTxt={textCl}
+      marginBtm={marginB}
+    >
+      {children}
+    </StyledButton>
+  );
+}
+
+export default Button;

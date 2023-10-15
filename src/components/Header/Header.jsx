@@ -8,6 +8,7 @@ import { logoutThunk } from '../../redux/auth/authOperations';
 import { selectUserName } from '../../redux/selectors';
 import { Logo } from '../Logo/Logo';
 import Modal from '../Modal/Modal';
+import Button from '../Buttons/Button';
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,9 +34,10 @@ const Header = () => {
           <span>{currentUserName}</span>
           <button onClick={openModal}>Exit</button>
           <Modal isOpen={isModalOpen} onClose={closeModal}>
-            <button type="button" onClick={handleLogout}>
+            <p>Are you sure you want to log out?</p>
+            <Button type="button" bgColor={true} onClick={handleLogout}>
               Log out
-            </button>
+            </Button>
           </Modal>
         </div>
       </div>

@@ -5,10 +5,13 @@ export const StyledOverlay = styled.div`
   width: 100vw;
   height: 100vh;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  top: 0px;
+  left: 0px;
+  background-color: rgba(34, 13, 91, 0.23);
   z-index: 2000;
+  overscroll-behavior: contain;
+  backdrop-filter: blur(3.5px);
   animation: fadeIn 1s;
-
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -24,13 +27,9 @@ export const StyledModal = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 100px;
-  min-height: 100px;
-  background-color: blue;
-  padding: 50px;
-  border-radius: 10px;
-`;
-
-export const StyledButton = styled.button`
-background-color:red;
+  width: 533px;
+  max-height: 448px;
+  background-color: rgb(64, 46, 155);
+  padding: 40px 72px;
+  overscroll-behavior: contain;
 `;

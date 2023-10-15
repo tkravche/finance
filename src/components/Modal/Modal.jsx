@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { StyledButton, StyledModal, StyledOverlay } from './Modal.styled';
+import { StyledModal, StyledOverlay } from './Modal.styled';
 import { createPortal } from 'react-dom';
+import Button from '../Buttons/Button';
 
 const portal = document.getElementById('modal');
 
@@ -9,18 +10,14 @@ const Modal = ({ children, isOpen, onClose }) => {
     if (isOpen) {
       const handleEscapeKeyPress = e => {
         if (e.key === 'Escape') {
-          console.log(e.key);
           onClose();
         }
       };
-
       const handleBackdropClick = e => {
-        console.log(e.target);
         if (e.target.dataset.modal) {
           onClose();
         }
       };
-
       document.addEventListener('keydown', handleEscapeKeyPress);
       document.addEventListener('click', handleBackdropClick);
       return () => {
@@ -34,9 +31,9 @@ const Modal = ({ children, isOpen, onClose }) => {
       <StyledOverlay data-modal="backdrop">
         <StyledModal>
           {children}
-          <StyledButton type="button" onClick={onClose}>
+          <Button type="button" onClick={onClose}>
             Cancel
-          </StyledButton>
+          </Button>
         </StyledModal>
       </StyledOverlay>
     ),

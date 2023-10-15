@@ -10,8 +10,7 @@ module.exports = {
       "border-bottom-cl": "rgba(255, 255, 255, 0.4)",
       "white-60": "rgba(255, 255, 255, 0.6)",
       "dashboard-text": "#ff868d",
-      "yellow-cl                                                                                              ":
-        "#ffb627",
+      "yellow-cl":"#ffb627",
       // 'gradient-btn': 'linear-gradient(
       //     167deg,
       //     #ffc727 0%,

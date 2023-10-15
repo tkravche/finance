@@ -1,12 +1,19 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+
+import SidebarNavigation from './SidebarNavigation/SidebarNavigation';
+import SidebarBalance from './SidebarBalance/SidebarBalance';
+import Currency from '../Currency/Currency';
+import { StyledNavAndBalanceWrapper, StyledSideBar } from './Sidebar.styled';
 
 const Sidebar = () => {
   return (
-    <>
-      <NavLink to="/home">Home</NavLink>
-      <NavLink to="/statistic">Statistics</NavLink>
-    </>
+    <StyledSideBar>
+      <StyledNavAndBalanceWrapper>
+        <SidebarNavigation />
+        <SidebarBalance />
+      </StyledNavAndBalanceWrapper>
+      <Currency />
+    </StyledSideBar>
   );
 };
 
