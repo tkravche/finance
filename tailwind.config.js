@@ -63,6 +63,7 @@ module.exports = {
         // => @media (min-width: 1440px) { ... }
       },
       backgroundImage: {
+        "bg-gradient": "linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%)",
         "register-bg": "url('/src/images/register/bg-register-desktop.jpg')",
         "login-bg": "url('/src/images/login/bg-login-web.jpg')",
         "form-bg": "url('/src/images/form/DesktopBg.jpg')",
