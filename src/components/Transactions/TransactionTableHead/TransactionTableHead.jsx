@@ -15,7 +15,7 @@ const TransactionTableHead = () => {
         </tr>
       </thead>
       <tbody></tbody>
-    </Table>
+    </Table>                         
   );
 };
 

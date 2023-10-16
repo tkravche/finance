@@ -1,6 +1,7 @@
 import React from 'react';
-import TransactionForm from '../TransactionForm/TransactionForm';
+// import TransactionForm from '../TransactionForm/TransactionForm';
 import Button from '../../Buttons/Button';
+import Switch from '../Switch/Switch';
 
 const AddTransactionPopUp = ({ onClose }) => {
   return (
@@ -9,7 +10,8 @@ const AddTransactionPopUp = ({ onClose }) => {
         X
       </button>
       <h2>Add Transaction</h2>
-      <TransactionForm />
+      <Switch />
+      {/* <TransactionForm /> */}
       <Button bgColor={true} textCl={true} marginB={'40px'}>
         Add
       </Button>
