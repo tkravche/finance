@@ -1,13 +1,36 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import {
+  StatisticsWrapper,
+  TitleChart,
+  TitleStatistics,
+  WrapTable,
+} from './StatisticsPage.styled';
+import DoughnutChart from './DoughnutChart/DoughnutChart';
+import StatisticData from './StatisticData/StatisticData';
+import StatisticTable from './StatisticTable/StatisticTable';
+
 const StatisticsPage = () => {
-  // getTransactionsSummaryRequest({ month: '10', year: '2023' }).then(data =>
-  //   console.log(data)
-  // );
+  const result = useSelector(
+    state => state.transactions.summary.categoriesSummary
+  );
+
+  const filterExpense = result
+    ? result.filter(item => item.type === 'EXPENSE')
+    : [];
 
   return (
     <>
-      <h2>Chart</h2>
-      {/* <DoughnutChart /> */}
+      <StatisticsWrapper>
+        <TitleChart>
+          <TitleStatistics>Statistics</TitleStatistics>
+          <DoughnutChart data={filterExpense} />
+        </TitleChart>
+        <WrapTable>
+          <StatisticData />
+          <StatisticTable />
+        </WrapTable>
+      </StatisticsWrapper>
     </>
   );
 };
