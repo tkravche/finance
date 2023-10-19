@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/finance/static/css/main.1c1c6350.css",
-    "main.js": "/finance/static/js/main.39df1e70.js",
+    "main.css": "/finance/static/css/main.f7ffe1d5.css",
+    "main.js": "/finance/static/js/main.743bde1c.js",
     "static/js/787.e597190e.chunk.js": "/finance/static/js/787.e597190e.chunk.js",
     "static/media/DesktopBg.jpg": "/finance/static/media/DesktopBg.2dbe1efddf2b911d9b9c.jpg",
     "static/media/Poppins-Regular.ttf": "/finance/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-SemiBold.ttf": "/finance/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
     "static/media/Poppins-Bold.ttf": "/finance/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/money.png": "/finance/static/media/money.9ba6c224a02b3027e547.png",
     "static/media/bg-register-desktop.jpg": "/finance/static/media/bg-register-desktop.163d8e534e5e7df81606.jpg",
     "static/media/bg-login-web.jpg": "/finance/static/media/bg-login-web.20b913d3ca3801ec00e3.jpg",
     "static/media/logo.svg": "/finance/static/media/logo.143a8f6f5dcf526cdac1808c9d0577d6.svg",
     "index.html": "/finance/index.html",
-    "main.1c1c6350.css.map": "/finance/static/css/main.1c1c6350.css.map",
-    "main.39df1e70.js.map": "/finance/static/js/main.39df1e70.js.map",
+    "main.f7ffe1d5.css.map": "/finance/static/css/main.f7ffe1d5.css.map",
+    "main.743bde1c.js.map": "/finance/static/js/main.743bde1c.js.map",
     "787.e597190e.chunk.js.map": "/finance/static/js/787.e597190e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c1c6350.css",
-    "static/js/main.39df1e70.js"
+    "static/css/main.f7ffe1d5.css",
+    "static/js/main.743bde1c.js"
   ]
 }
