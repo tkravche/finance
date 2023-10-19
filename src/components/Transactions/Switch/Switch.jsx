@@ -1,4 +1,4 @@
-// import { useField } from 'formik';
+import { useField } from 'formik';
 import { CiCircleMinus, CiCirclePlus } from 'react-icons/ci';
 import {
   StyledSwitch,
@@ -6,30 +6,20 @@ import {
   SwitchSlider,
   SwitchText,
 } from './Switch.styled';
-import { useState } from 'react';
 
-const Switch = () => {
-  const [isOn, setIsOn] = useState(false);
-  const handleToggle = () => {
-    setIsOn(!isOn);
-  };
-
-  // const { checked } = props;
-  // const [field] = useField(props);
+const Switch = ({ ...props }) => {
+  const { checked } = props;
+  const [field] = useField(props);
 
   return (
     <StyledSwitch>
-      <SwitchText checked={isOn}>Income</SwitchText>
-      <SwitchSlider checked={isOn}>
-        <SwitchCheckBox
-          type="checkbox"
-          checked={isOn}
-          onChange={handleToggle}
-        />
-        <CiCirclePlus icon="icon__btn-plus" checked={isOn} />
-        <CiCircleMinus icon="icon__btn-minus" checked={isOn} />
+      <SwitchText checked={checked}>Income</SwitchText>
+      <SwitchSlider checked={checked}>
+        <SwitchCheckBox {...field} {...props} />
+        <CiCirclePlus icon="icon__btn-plus" checked={checked} />
+        <CiCircleMinus icon="icon__btn-minus" checked={checked} />
       </SwitchSlider>
-      <SwitchText checked={isOn}>Expense</SwitchText>
+      <SwitchText checked={checked}>Expense</SwitchText>
     </StyledSwitch>
   );
 };

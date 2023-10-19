@@ -5,7 +5,7 @@ export const Table = styled.table`
   width: 100%;
   border-radius: 8px;
   border-collapse: collapse;
-  color: var(--total-white);
+  color: white;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     max-width: 704px;
@@ -82,7 +82,7 @@ export const NoTransactionsText = styled.td`
   line-height: 1.5;
   text-align: center;
   padding: 60px 20px;
-  color: var(--white);
+  color: white;
 
   @media screen and (max-width: 768.9px) {
     font-size: 18px;
@@ -119,11 +119,10 @@ export const ButtonDelete = styled.button`
   width: 65px;
   height: 29px;
   padding: 4px 12px;
-  background: ${({ theme }) => theme.colors.btnGradient};
+  background: purple;
   border-radius: 20px;
-  box-shadow: ${({ theme }) => theme.shadows.secondary};
 
-  color: var(--white, #fbfbfb);
+  color: #fbfbfb;
   text-align: center;
   font-family: Poppins;
   font-size: 14px;
@@ -132,7 +131,6 @@ export const ButtonDelete = styled.button`
   border: none;
   cursor: pointer;
   outline: none;
-  transition: transform ${({ theme }) => theme.transitions.regular};
 
   &:focus,
   &:hover {
@@ -146,11 +144,11 @@ export const Td = styled.td`
   text-align: left;
 
   &.income {
-    color: var(--yellow);
+    color: yellow;
   }
 
   &.expense {
-    color: var(--dashboard-text);
+    color: grey;
   }
 
   @media screen and (max-width: 767.5px) {

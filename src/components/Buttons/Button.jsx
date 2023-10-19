@@ -15,9 +15,9 @@ function Button({
     <StyledButton
       type={type}
       onClick={onClick}
-      buttonBg={bgColor}
-      buttonTxt={textCl}
-      marginBtm={marginB}
+      buttonbg={bgColor}
+      buttontxt={textCl}
+      marginbtm={marginB}
     >
       {children}
     </StyledButton>

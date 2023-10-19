@@ -20,6 +20,7 @@ function App() {
   const isLogin = useSelector(selectIsLogin);
   const token = useSelector(selectToken);
 
+
   useEffect(() => {
     if (!isLogin && token) {
       dispatch(currentUserThunk());

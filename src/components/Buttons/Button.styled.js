@@ -4,13 +4,13 @@ export const StyledButton = styled.button`
 width: 100%;
 max-width: 280px;
 height: 50px;
-margin-bottom:${props => (props.marginBtm? props.marginBtm : '0px')}; 
+margin-bottom:${props => (props.marginbtm? props.marginbtm : '0px')}; 
 border-radius: 20px;
-background-image:  ${props => (props.buttonBg? 'linear-gradient(97deg, #FFC727 -16.42%, #9E40BA 97.04%, #7000FF 150.71%)' : 'linear-gradient(#FCFCFC 50%, #FCFCFC 50% )')}; 
+background-image:  ${props => (props.buttonbg? 'linear-gradient(97deg, #FFC727 -16.42%, #9E40BA 97.04%, #7000FF 150.71%)' : 'linear-gradient(#FCFCFC 50%, #FCFCFC 50% )')}; 
 transition: transform 300ms ease-in;
 border: transparent;
 font-size: 18px;
-color:${props => (props.buttonTxt? 'white' : 'black')}; 
+color:${props => (props.buttontxt? 'white' : 'black')}; 
 text-transform: uppercase;
   &:focus,
   &:hover {

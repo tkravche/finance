@@ -28,7 +28,7 @@ export const StyledModal = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 533px;
-  max-height: 448px;
+  /* max-height: 448px; */
   background-color: rgb(64, 46, 155);
   padding: 40px 72px;
   overscroll-behavior: contain;

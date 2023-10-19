@@ -1,20 +1,14 @@
 import React from 'react';
-// import TransactionForm from '../TransactionForm/TransactionForm';
-import Button from '../../Buttons/Button';
-import Switch from '../Switch/Switch';
+import TransactionForm from '../TransactionForm/TransactionForm';
 
-const AddTransactionPopUp = ({ onClose }) => {
+const AddTransactionPopUp = ({ onClose, text }) => {
   return (
     <>
       <button type="button" onClick={onClose}>
         X
       </button>
-      <h2>Add Transaction</h2>
-      <Switch />
-      {/* <TransactionForm /> */}
-      <Button bgColor={true} textCl={true} marginB={'40px'}>
-        Add
-      </Button>
+      <h2>{text}</h2>
+      <TransactionForm />
     </>
   );
 };
